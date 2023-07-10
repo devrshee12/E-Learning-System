@@ -1,4 +1,5 @@
 package javasemesterproject;
+import java.util.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -42,6 +43,9 @@ public class Main extends JFrame implements ActionListener{
         
         headerPanel = new JPanel(new BorderLayout());
         add(headerPanel, BorderLayout.NORTH);
+        Queue<Integer> ll = new LinkedList<>();
+
+
         
         mainPanel = new JPanel();
         mainPanel.setLayout(null);
@@ -53,7 +57,7 @@ public class Main extends JFrame implements ActionListener{
         
         //Header Code
         aboutProject = new JMenuItem("About Project");    
-        aboutDevelopers = new JMenuItem("About Developers");  
+        aboutDevelopers = new JMenuItem("About Developer");  
         menuBar = new JMenuBar();    
         about = new JMenu("About");
         exit = new JMenuItem("Exit");

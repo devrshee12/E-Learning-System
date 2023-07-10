@@ -80,15 +80,19 @@ public class ViewCourses extends JFrame implements ActionListener{
         try{
             DBConnection c1 = new DBConnection();
             String q = "select Name From Subjects";
+            DBConnection c2 = new DBConnection();
             
-            ResultSet rs = c1.s.executeQuery(q); 
-            int    rowCount = 0;
-            while (rs.next())
-                rowCount++;
+            ResultSet rs = c1.s.executeQuery(q);
+            String q1 = "Select COUNT(*) from Subjects";
+            ResultSet rs1 = c2.s.executeQuery(q1);
+            rs1.next();
+            int rowCount = rs1.getInt(1);
+//            while (rs.next())
+//                rowCount++;
             subjects = new String[rowCount+1];
             subjects[0] = "";
             int row = 1;
-            rs.beforeFirst();
+//            rs.beforeFirst();
             while (rs.next()) {
                 subjects[row] = rs.getString("Name");
                 row++;

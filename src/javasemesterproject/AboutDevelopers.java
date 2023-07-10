@@ -15,7 +15,7 @@ public class AboutDevelopers extends JFrame{
     JPanel tablePanel;
     JLabel title;
     public AboutDevelopers() {
-        super("About Developers");
+        super("About Developer");
         setSize(620,380);
         setLocation(430,280);
         setLayout(new BorderLayout());
@@ -23,17 +23,15 @@ public class AboutDevelopers extends JFrame{
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("javasemesterproject/icons/systemIcon.png"));
         setIconImage(icon.getImage());
         
-        title = new JLabel("Group Members", JLabel.CENTER);
+        title = new JLabel("Project Developer", JLabel.CENTER);
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
         title.setBackground(Color.BLACK);
         title.setForeground(Color.WHITE);
         title.setOpaque(true);
         add(title, BorderLayout.NORTH);
         
-        String[][] rowData = {{"70078386", "Muhammad Suwaid Aslam", "<html>Modules Development<html>"}, 
-                               {"70078531", "Sikander Imran Khan", "<html>Modules Integration<br/> and Code Refinement</html>"}, 
-                               {"70077417", "Abdul Rafay", "<html>Database Connectity<br/> and Design</html>"}};
-        String columns[] = {"SAP ID", "Name", "Contributions"};
+        String[][] rowData = {{"20IT486", "Panchhiwala Devarshee"}};
+        String columns[] = {"CLG ID", "Name"};
         
         tablePanel = new JPanel(new BorderLayout());
         add(tablePanel, BorderLayout.CENTER);
@@ -45,7 +43,7 @@ public class AboutDevelopers extends JFrame{
         TableColumnModel colModel = table.getColumnModel();
         colModel.getColumn(0).setPreferredWidth(10);  
         colModel.getColumn(1).setPreferredWidth(110);    
-        colModel.getColumn(2).setPreferredWidth(90);
+//        colModel.getColumn(2).setPreferredWidth(90);
         tablePanel.add(table.getTableHeader(), BorderLayout.NORTH);
         tablePanel.add(table, BorderLayout.CENTER);
         

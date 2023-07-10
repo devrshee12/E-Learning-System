@@ -64,15 +64,20 @@ public class DeleteSubject extends JFrame implements ActionListener{
         String[] subjectsData = null;
         try{
             DBConnection c1 = new DBConnection();
+            DBConnection c2 = new DBConnection();
 
             String q = "select * from Subjects";
 
             ResultSet rs = c1.s.executeQuery(q);
-            int rowCount = 0;
-            while(rs.next())
-                rowCount++;
+            String q1 = "select count(*) from Subjects";
+            ResultSet rs1 = c2.s.executeQuery(q1);
+            rs1.next();
+            int rowCount = rs1.getInt(1);
+//            rs1.close();
+//            while(rs.next())
+//                rowCount++;
             subjectsData = new String[rowCount];
-            rs.beforeFirst();
+//            rs.beforeFirst();
             int i=0;
             while(rs.next()){
                 subjectsData[i] = rs.getString("Name");
